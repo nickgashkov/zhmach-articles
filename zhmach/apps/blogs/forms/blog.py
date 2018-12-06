@@ -12,6 +12,18 @@ class BlogForm(forms.ModelForm):
 
         super().__init__(**kwargs)
 
+        self.tune_fields()
+
+    def tune_fields(self):
+        self.tune_name_field()
+        self.tune_text_field()
+
+    def tune_name_field(self):
+        self.fields['name'].widget.attrs.update({'class': 'input'})
+
+    def tune_text_field(self):
+        self.fields['text'].widget.attrs.update({'class': 'textarea'})
+
     def save(self, commit=True):
         if self.instance._state.adding:
             self.instance.author = self.user

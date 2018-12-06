@@ -2,21 +2,21 @@
 
 {% block content %}
   <section class="section">
-    <form class="form-horizontal" action="{{ form_action }}" method="post">
+    <form action="{{ form_action }}" method="post">
       {% csrf_token %}
 
       <h1 class="title">{{ form_title }}</h1>
 
-      <div class="field">
-        <div class="help is-danger">{{ form.name.errors }}</div>
-        <div class="label">{{ form.name.label_tag }}</div>
-        <div class="control">{{ form.name }}</div>
-      </div>
+      {% for field in form %}
+        <div class="field">
+          <div class="label">{{ field.label_tag }}</div>
+          <div class="control">{{ field }}</div>
+          <div class="help is-danger">{{ field.errors }}</div>
+        </div>
+      {% endfor %}
 
-      <div class="field">
-        <div class="label">{{ form.text.label_tag }}</div>
-        <div class="control">{{ form.text }}</div>
-        <div class="help is-danger">{{ form.text.errors }}</div>
+      <div class="help is-danger">
+        {{ form.non_field_errors }}
       </div>
 
       <div class="field is-grouped">
@@ -28,6 +28,7 @@
              href="javascript:history.back()">Отменить</a>
         </div>
       </div>
+
     </form>
   </section>
 {% endblock content %}
