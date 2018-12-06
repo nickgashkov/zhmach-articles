@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'zhmach.apps.accounts',
     'zhmach.apps.blogs',
 ]
 
@@ -68,6 +69,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/blogs/blogs/'
+LOGOUT_REDIRECT_URL = '/blogs/blogs/'
 
 LANGUAGE_CODE = 'ru-ru'
 
