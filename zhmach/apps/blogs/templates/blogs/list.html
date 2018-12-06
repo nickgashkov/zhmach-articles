@@ -3,10 +3,22 @@
 {% block content %}
   {% for object in object_list %}
     <section class="section">
-      <div class="container">
-        <h1 class="title">{{ object }}</h1>
-        <p class="content">{{ object.text }}</p>
+      <div class="is-size-7">
+        <span>{{ object.author }}</span>
+        <span>|</span>
+        <span>{{ object.created_at }}</span>
+        <span>|</span>
+        <span>{{ object.views }}</span>
       </div>
+      <h1 class="title">
+        <a href="{{ object.get_absolute_url }}">
+          {{ object }}
+        </a>
+      </h1>
+      <p class="content">{{ object.text }}</p>
+    {% if not forloop.last %}
+      <hr class="has-background-grey-lighter"/>
+    {% endif %}
     </section>
   {% endfor %}
 {% endblock content %}

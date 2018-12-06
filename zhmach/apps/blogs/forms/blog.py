@@ -13,7 +13,7 @@ class BlogForm(forms.ModelForm):
         super().__init__(**kwargs)
 
     def save(self, commit=True):
-        if not self.instance.pk:
+        if self.instance._state.adding:
             self.instance.author = self.user
 
         return super().save(commit)

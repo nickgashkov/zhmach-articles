@@ -1,27 +1,27 @@
 {% extends "main.html" %}
 
 {% block content %}
-  <div class="container">
-    <form action="{{ form_action }}" method="post">
-      {% csrf_token %}
+  <form class="form-horizontal" action="{{ form_action }}" method="post">
+    {% csrf_token %}
 
-      <div class="field">
-        <div class="help is-danger">{{ form.name.errors }}</div>
-        <div class="label">{{ form.name.label_tag }}</div>
-        <div class="control">{{ form.name }}</div>
-      </div>
+    <legend>Add blog</legend>
 
-      <div class="field">
-        <div class="label">{{ form.text.label_tag }}</div>
-        <div class="control">{{ form.text }}</div>
-        <div class="help is-danger">{{ form.text.errors }}</div>
-      </div>
+    <div class="field">
+      <div class="help is-danger">{{ form.name.errors }}</div>
+      <div class="label">{{ form.name.label_tag }}</div>
+      <div class="control">{{ form.name }}</div>
+    </div>
 
-     <div class="field">
-       <div class="control">
-         <input type="submit" class="button is-primary"/>
-       </div>
+    <div class="field">
+      <div class="label">{{ form.text.label_tag }}</div>
+      <div class="control">{{ form.text }}</div>
+      <div class="help is-danger">{{ form.text.errors }}</div>
+    </div>
+
+   <div class="field">
+     <div class="control">
+       <input type="submit" class="button is-primary"/>
      </div>
-    </form>
-  </div>
+   </div>
+  </form>
 {% endblock content %}

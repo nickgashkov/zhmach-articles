@@ -1,5 +1,12 @@
 {% extends "main.html" %}
 
-{% block body %}
-  Blog detail
-{% endblock body %}
+{% block content %}
+  <section class="section">
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <h1 class="title">{{ object.name }}</h1>
+        <p class="content">{{ object.text }}</p>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

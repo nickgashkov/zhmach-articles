@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
-<body>
+<body class="has-navbar-fixed-top">
   {% block body %}
     {% block header %}
+      {% include "helpers/_header.html" %}
     {% endblock header %}
-    {% block content %}
-    {% endblock content %}
+    <div class="container has-background-white-ter">
+      {% block content %}
+      {% endblock content %}
+    </div>
     {% block footer %}
+      {% include "helpers/_footer.html" %}
     {% endblock footer %}
   {% endblock body %}
 </body>
