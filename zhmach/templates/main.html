@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Charmonman">
   <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    #wrapper {
+      flex: 1 0 auto;
+    }
+
     .has-text-brand {
       font-family: Charmonman, cursive;
     }
@@ -23,13 +33,13 @@
     {% block header %}
       {% include "helpers/_header.html" %}
     {% endblock header %}
-    <div class="columns is-centered has-background-white">
-      <div class="column is-one-third">
-        {% block content %}
-        {% endblock content %}
+    <div id="wrapper">
+      <div class="columns is-centered has-background-white">
+        <div class="column is-one-third">
+          {% block content %}
+          {% endblock content %}
+        </div>
       </div>
-    </div>
-    <div class="container has-background-white">
     </div>
     {% block footer %}
       {% include "helpers/_footer.html" %}
