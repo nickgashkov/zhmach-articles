@@ -11,7 +11,7 @@
           {{ object }}
         </a>
       </h1>
-      <p class="content">{{ object.text }}</p>
+      <p class="content">{{ object.text|truncatewords:50 }}</p>
     </section>
   {% endfor %}
 {% endblock content %}

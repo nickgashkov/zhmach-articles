@@ -3,6 +3,11 @@
 {% block content %}
   <section class="section">
     <h1 class="title">{{ object.name }}</h1>
+    <div class="buttons">
+      <a class="button is-warning" href="{{ object.get_update_url }}">
+        <strong>Редактировать</strong>
+      </a>
+    </div>
     <p class="content">{{ object.text }}</p>
   </section>
 {% endblock content %}

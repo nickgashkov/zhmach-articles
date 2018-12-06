@@ -36,6 +36,9 @@ class Blog(models.Model):
     def get_absolute_url(self):
         return reverse('blogs:blog-detail', kwargs={'pk': self.pk})
 
+    def get_update_url(self):
+        return reverse('blogs:blog-update', kwargs={'pk': self.pk})
+
     def increment_views(self):
         self.views = F('views') + 1
         self.save()
