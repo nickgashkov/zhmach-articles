@@ -18,6 +18,6 @@ class BlogUpdateView(generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['form_title'] = f'Редактирование записи «{self.object}»'
+        context['form_title'] = f'Редактировать статью «{self.object}»'
 
         return context

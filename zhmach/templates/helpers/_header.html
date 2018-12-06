@@ -6,17 +6,23 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="{% url "blogs:blog-list" %}">Blogs</a>
+      <a class="navbar-item" href="{% url "blogs:blog-list" %}">Статьи</a>
     </div>
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-warning" href="{% url "blogs:blog-create" %}">
-            <strong>Add new story</strong>
+          {% if user.is_authenticated %}
+            <a class="button is-warning" href="{% url "blogs:blog-create" %}">
+              <strong>Добавить статью</strong>
+            </a>
+            <a class="button is-light" href="{% url "logout" %}">
+              Выйти
+            </a>
+          {% else %}
+          <a class="button is-light" href="{% url "login" %}">
+            Войти
           </a>
-          <a class="button is-light">
-            Log in
-          </a>
+          {% endif %}
         </div>
       </div>
     </div>
