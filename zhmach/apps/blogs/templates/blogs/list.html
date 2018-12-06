@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+
+{% block content %}
+  {% for object in object_list %}
+    <section class="section">
+      <div class="container">
+        <h1 class="title">{{ object }}</h1>
+        <p class="content">{{ object.text }}</p>
+      </div>
+    </section>
+  {% endfor %}
+{% endblock content %}
