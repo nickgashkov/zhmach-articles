@@ -6,9 +6,12 @@ from zhmach.apps.blogs.forms import BlogForm
 
 class BlogUpdateView(generic.UpdateView):
     model = apps.get_model('blogs.Blog')
-    template_name = 'blogs/update.html'
+    template_name = 'blogs/create-update.html'
 
     form_class = BlogForm
 
     def get_form_kwargs(self):
-        return {'user': self.request.user}
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+
+        return kwargs

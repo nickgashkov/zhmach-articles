@@ -1,12 +1,24 @@
-<nav class="navbar is-primary is-fixed-top">
+<nav class="navbar is-fixed-top is-dark">
   <div class="navbar-brand">
-    <div class="navbar-item">
-      Zhmach.com
+    <div class="navbar-item has-text-brand is-size-4">
+      Z
     </div>
   </div>
   <div class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item" href="{% url "blogs:blog-list" %}">Blogs</a>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-warning" href="{% url "blogs:blog-create" %}">
+            <strong>Add new story</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>

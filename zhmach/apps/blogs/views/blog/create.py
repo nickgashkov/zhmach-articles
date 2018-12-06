@@ -6,7 +6,7 @@ from zhmach.apps.blogs.forms import BlogForm
 
 class BlogCreateView(generic.CreateView):
     model = apps.get_model('blogs.Blog')
-    template_name = 'blogs/create.html'
+    template_name = 'blogs/create-update.html'
 
     form_class = BlogForm
 

@@ -2,18 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Zhmach Dot Com</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Charmonman">
+  <style>
+    .has-text-brand {
+      font-family: Charmonman, cursive;
+    }
+    .has-margin-top {
+      margin-top: 1rem;
+    }
+  </style>
 </head>
-<body class="has-navbar-fixed-top">
+<body class="has-navbar-fixed-top has-background-white-ter">
   {% block body %}
     {% block header %}
       {% include "helpers/_header.html" %}
     {% endblock header %}
-    <div class="container has-background-white-ter">
-      {% block content %}
-      {% endblock content %}
+    <div class="columns is-centered has-background-white">
+      <div class="column is-one-third">
+        {% block content %}
+        {% endblock content %}
+      </div>
+    </div>
+    <div class="container has-background-white">
     </div>
     {% block footer %}
       {% include "helpers/_footer.html" %}
