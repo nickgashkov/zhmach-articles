@@ -2,9 +2,12 @@
 
 {% block content %}
   <section class="section">
-    <h1 class="title">{{ object.name }}</h1>
+    <h1 class="title">{{ object }}</h1>
+    <h2 class="is-size-7">
+      <span>{{ object.author }} | {{ object.created_at }}</span>
+    </h2>
     {% if user.is_authenticated %}
-      <div class="buttons">
+      <div class="buttons has-margin-top">
         <a class="button is-warning" href="{{ object.get_update_url }}">
           <strong>Редактировать</strong>
         </a>
@@ -14,6 +17,11 @@
         </form>
       </div>
     {% endif %}
-    <p class="content">{{ object.text }}</p>
+    {% if object.image %}
+      <figure class="image is-4by3 has-margin-top">
+        <img src="{{ object.image.url }}">
+      </figure>
+    {% endif %}
+    <p class="content has-margin-top">{{ object.text|linebreaksbr }}</p>
   </section>
 {% endblock content %}

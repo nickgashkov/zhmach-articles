@@ -19,6 +19,12 @@ class Blog(models.Model):
         max_length=500,
         verbose_name='Наименование',
     )
+    image = models.ImageField(
+        upload_to='%Y/%m/%d/',
+        blank=True,
+        null=True,
+        verbose_name='Изображение',
+    )
     text = models.TextField(
         verbose_name='Текст',
     )

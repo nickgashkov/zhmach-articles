@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import path
+from django.views.generic import RedirectView
 
 from zhmach.apps.blogs.views.blog import (
     BlogCreateView,
@@ -12,6 +13,7 @@ from zhmach.apps.blogs.views.blog import (
 app_name = 'blogs'
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='blogs/')),
     path('blogs/', BlogListView.as_view(), name='blog-list'),
     path('blogs/add/', login_required(BlogCreateView.as_view()), name='blog-create'),
     path('blogs/<int:pk>/', BlogDetailView.as_view(), name='blog-detail'),

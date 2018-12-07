@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +7,9 @@
   <title>Статьи-статейки</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Charmonman">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace">
+  <link rel="icon" type="image/x-icon" href="{% static "favicon.ico" %}" />
+
   <style>
     body {
       display: flex;
@@ -18,7 +22,7 @@
     }
 
     .has-text-brand {
-      font-family: Charmonman, cursive;
+      font-family: 'Covered By Your Grace', cursive;
     }
     .has-margin-top {
       margin-top: 1rem;

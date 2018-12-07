@@ -3,15 +3,23 @@
 {% block content %}
   {% for object in object_list %}
     <section class="section">
-      <h2 class="is-size-7">
-        <span>{{ object.author }} | {{ object.created_at }} | {{ object.views }}</span>
-      </h2>
       <h1 class="title">
         <a href="{{ object.get_absolute_url }}" class="has-text-grey-darker">
           {{ object }}
         </a>
       </h1>
-      <p class="content">{{ object.text|truncatewords:50 }}</p>
+      <h2 class="is-size-7">
+        <span>{{ object.author }} | {{ object.created_at }}</span>
+      </h2>
+      <h2 class="is-size-7">
+        <span><i class="fa fa-eye"></i>&nbsp;{{ object.views }}</span>
+      </h2>
+      {% if object.image %}
+        <figure class="image is-4by3 has-margin-top">
+          <img src="{{ object.image.url }}">
+        </figure>
+      {% endif %}
+      <p class="content has-margin-top">{{ object.text|linebreaksbr|truncatewords:50 }}</p>
     </section>
   {% endfor %}
 {% endblock content %}
