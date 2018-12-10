@@ -1,5 +1,7 @@
 {% extends "main.html" %}
 
+{% load static %}
+
 {% block content %}
   {% for object in object_list %}
     <section class="section">
@@ -16,7 +18,9 @@
         </div>
         <div class="column">
           <h2 class="is-size-7 has-text-right">
-            <span><i class="fa fa-eye"></i>&nbsp;{{ object.views }}</span>
+            <span>
+              <img width="10px" height="10px" src="{% static "eye.svg" %}"/>&nbsp;{{ object.views }}
+            </span>
           </h2>
         </div>
       </div>
